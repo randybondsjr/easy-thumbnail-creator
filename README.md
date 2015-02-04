@@ -18,6 +18,10 @@ The CDN libraries were used for js and css to lighten the size of the repository
 ## Future
 1. **Resize and Crop User Uploaded Images** - Currently the user uploaded images are simply cropped, not resized and then cropped. Eventually, this should be added.
 
+## Resources
+1. A Photoshop file is included in the repository for easy thumbnail foreground creation (thumbnail-template.psd). 
+
+
 Pull Requests Welcome!
 
 
