@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>ESRI Easy Thumbnail Creator</title>
+  <title>Easy Thumbnail Creator</title>
 </head>
 <body>
   <!-- Bootstrap CSS -->
@@ -19,7 +19,7 @@
 			<div id='content' class='row'>
 		  	<div id='main' class='col-lg-12' role='main'>
 		    	<div class='page-header'>
-		    		<h1>ESRI Thumbnail Creator</h1>
+		    		<h1>Easy Thumbnail Creator</h1>
 		      </div>
           <form id="upload" method="POST" action="./result.php"  enctype="multipart/form-data">
             <h5>Choose a background</h5>
