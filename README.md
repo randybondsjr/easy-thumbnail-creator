@@ -15,6 +15,9 @@ The CDN libraries were used for js and css to lighten the size of the repository
 ## Recommended (not required)
 1. [Bootstrap](http://getbootstrap.com) -- not required, but html built with it in mind
 
+## Installation
+Install on any PHP Server by forking or downloading zip.
+
 ## Future
 1. **Resize and Crop User Uploaded Images** - Currently the user uploaded images are simply cropped, not resized and then cropped. Eventually, this should be added.
 
