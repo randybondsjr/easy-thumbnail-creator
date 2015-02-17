@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>G&H's AGOL Thumbnail generator</title>
+  <title>Easy Thumbnail Creator</title>
 </head>
 <body>
   <!-- Bootstrap CSS -->
@@ -19,7 +19,7 @@
 			<div id='content' class='row'>
 		  	<div id='main' class='col-lg-12' role='main'>
 		    	<div class='page-header'>
-		    		<h1>G&H's AGOL Thumbnail generator</h1>
+		    		<h1>Easy Thumbnail Creator/h1>
 		      </div>
 
             
