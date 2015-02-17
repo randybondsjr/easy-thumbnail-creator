@@ -24,6 +24,7 @@
   //Clean Up POST VARIABLES
   $background = filter_var($_POST["background"], FILTER_SANITIZE_STRING);
   $foreground = filter_var($_POST["foreground"], FILTER_SANITIZE_STRING);
+  $sharing = filter_var($_POST["sharing"], FILTER_SANITIZE_STRING);
   $text       = filter_var($_POST["text"], FILTER_SANITIZE_STRING);
   $fontsize   = filter_var($_POST["fontsize"], FILTER_VALIDATE_INT);
 
@@ -46,17 +47,20 @@
   }
   $foregroundImage = imagecreatefrompng('./foregrounds/'.$foreground.'.png');
   
+  $sharingImage = imagecreatefrompng('./sharing/'.$sharing.'.png');
+
   
   // FONT
   putenv('GDFONTPATH=' . realpath('.'));
   $font = 'arial';
   
-  
   //copy each png file on top of the destination (result) png
   imagecopy($dest_image, $backgroundImage, 0, 0, 0, 0, WIDTH, HEIGHT);
   imagecopy($dest_image, $foregroundImage, 0, 0, 0, 0, WIDTH, HEIGHT);
+  imagecopy($dest_image, $sharingImage, 175, 0, 0, 0, 25, 25);
+
   $white = imagecolorallocate($dest_image, 255, 255, 255);
-  imagettftext($dest_image, $fontsize, 0, 8, 125, $white, $font, $text);
+  imagettftext($dest_image, $fontsize, 0, 50, 125, $white, $font, $text);
   
   //send the appropriate headers and output the image in the browser
   header('Content-Type: image/png');
@@ -66,6 +70,8 @@
   //destroy all the image resources to free up memory
   imagedestroy($backgroundImage);
   imagedestroy($foregroundImage);
+  imagedestroy($sharingImage);
+
   imagedestroy($dest_image);
 
 ?>
