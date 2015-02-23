@@ -19,7 +19,7 @@
 			<div id='content' class='row'>
 		  	<div id='main' class='col-lg-12' role='main'>
 		    	<div class='page-header'>
-		    		<h1>Easy Thumbnail Creator/h1>
+		    		<h1>Easy Thumbnail Creator</h1>
 		      </div>
 
             
