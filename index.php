@@ -19,50 +19,34 @@
 			<div id='content' class='row'>
 		  	<div id='main' class='col-lg-12' role='main'>
 		    	<div class='page-header'>
-		    		<h1>Easy Thumbnail Creator</h1>
+		    		<h1>Easy Thumbnail Creator/h1>
 		      </div>
+
+            
+            
           <form id="upload" method="POST" action="./result.php"  enctype="multipart/form-data">
             <h5>Choose a background</h5>
             <div class="row form-group">
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./backgrounds/topo.png" class="img-responsive img-radio">
-                  <input type="radio" name="background" id="optionsRadios1" value="topo" checked>
-                </label>
-              </div>
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./backgrounds/mountains.png" class="img-responsive img-radio">
-                  <input type="radio" name="background" id="optionsRadios1" value="mountains" >
-                </label>
-              </div>
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./backgrounds/larson.png" class="img-responsive img-radio">
-                  <input type="radio" name="background" id="optionsRadios1" value="larson" >
-                </label>
-              </div>
+             
+             <!--Step through background image directory and create a option for each image-->
+             <?php
+
+                $bkgrnd_dir = './backgrounds/*';
+
+                foreach(glob($bkgrnd_dir) as $file)
+                {
+                    if (strpos($file,'png')!==false){
+                        echo '<div class="col-sm-4 text-center">'.
+                                '<label>'.
+                                    '<img src="'.$file.'" class="img-responsive img-radio">'.
+                                    '<input type="radio" name="background" id="optionsRadios1" value="'.substr(basename($file),0,-4).'" checked>'.
+                                '</label>'.
+                            '</div>';
+                        }
+                    }
+                ?>
             </div>
-            <div class="row form-group">
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./backgrounds/church.png" class="img-responsive img-radio">
-                  <input type="radio" name="background" id="optionsRadios1" value="church" >
-                </label>
-              </div>
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./backgrounds/station.png" class="img-responsive img-radio">
-                  <input type="radio" name="background" id="optionsRadios1" value="station" >
-                </label>
-              </div>
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./backgrounds/downtown.png" class="img-responsive img-radio">
-                  <input type="radio" name="background" id="optionsRadios1" value="downtown" >
-                </label>
-              </div>
-            </div>
+            
             <div class="form-group">
               <label for="backgroundFile">Or upload your own background</label>
               <input type="file" id="backgroundFile" name="backgroundFile">
@@ -71,38 +55,42 @@
             <hr/>
             <h5>Choose a foreground</h5>
             <div class="row form-group">
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./foregrounds/thumbnail-template-app.png" class="img-responsive img-radio">
-                  <input type="radio" name="foreground" id="optionsRadios1" value="thumbnail-template-app" checked>
-                </label>
-              </div>
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./foregrounds/thumbnail-template-layer.png" class="img-responsive img-radio">
-                  <input type="radio" name="foreground" id="optionsRadios1" value="thumbnail-template-layer" >
-                </label>
-              </div>
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./foregrounds/thumbnail-template-map.png" class="img-responsive img-radio">
-                  <input type="radio" name="foreground" id="optionsRadios1" value="thumbnail-template-map" >
-                </label>
-              </div>
+
+            <!--Step through background image directory and create a option for each image-->
+            <?php
+                $foregrnd_dir = './foregrounds/*';
+                foreach(glob($foregrnd_dir) as $file)
+                {
+                    if (strpos($file,'png')!==false){
+                        echo '<div class="col-sm-4 text-center">'.
+                                '<label>'.
+                                    '<img src="'.$file.'" class="img-responsive img-radio">'.
+                                    '<input type="radio" name="foreground" id="optionsRadios1" value="'.substr(basename($file),0,-4).'" checked>'.
+                                '</label>'.
+                            '</div>';
+                    }
+                }
+                ?>
             </div>
+   
+            <h5>Choose a sharing type</h5>
+           
             <div class="row form-group">
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./foregrounds/thumbnail-template-pdf.png" class="img-responsive img-radio">
-                  <input type="radio" name="foreground" id="optionsRadios1" value="thumbnail-template-pdf" >
-                </label>
-              </div>
-              <div class="col-sm-4 text-center">
-                <label>
-                  <img src="./foregrounds/thumbnail-template-widget.png" class="img-responsive img-radio">
-                  <input type="radio" name="foreground" id="optionsRadios1" value="thumbnail-template-widget" >
-                </label>
-              </div>
+             <!--Step through background image directory and create a option for each image-->
+               <?php
+                $share_dir = './sharing/*';
+                foreach(glob($share_dir) as $file)
+                {
+                    if (strpos($file,'png')!==false){
+                        echo '<div class="col-sm-4 text-center">'.
+                                '<label>'.
+                                    '<img src="'.$file.'" class="img-responsive img-radio">'.
+                                    '<input type="radio" name="sharing" id="optionsRadios1" value="'.substr(basename($file),0,-4).'" checked>'.
+                                '</label>'.
+                            '</div>';
+                    }
+                }
+                ?>
             </div>
             
             <div class="form-group">
@@ -132,6 +120,7 @@
               <div id="preview">
                 <div id="background">
                   <div id="foreground">
+                    <div id="sharing"></div>
                     <div id="title"><span></span></div>
                   </div>
                 </div>

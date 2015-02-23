@@ -3,9 +3,12 @@ $(document).ready(function(){
   var updateThumbnail = function () {
     var background = $('input[name=background]:checked').val();
     var foreground = $('input[name=foreground]:checked').val();
+    var sharing = $('input[name=sharing]:checked').val();
     var title = $("#text").val();
+    
     $("#foreground").css('background','url(./foregrounds/'+foreground+'.png)');
     $("#background").css('background','url(./backgrounds/'+background+'.png)');
+    $("#sharing").css('background','url(./sharing/'+sharing+'.png)');   
     $("#title span").text(title);
   }
    
@@ -16,6 +19,10 @@ $(document).ready(function(){
   $("input[name=background]").change(function(){
     updateThumbnail();
   });
+  
+  $("input[name=sharing]").change(function(){
+    updateThumbnail();
+  });  
   
   $("#text").keyup(function(){
     updateThumbnail();
@@ -44,5 +51,7 @@ $(document).ready(function(){
 			text: "Please enter a title"
 		}
   });
+  
+
 });
 
