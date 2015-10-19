@@ -1,5 +1,5 @@
 # Easy Thumbnail Creator
-PHP Web application for generating thumbnail images for ArcGIS Online, based loosely off of <https://github.com/sirws/ThumbnailBuilderUI> (but really could be used for any thumbnail creation). This application uses PHP to create an image on the fly for ArcGIS Online thumbnails. By default, the foreground and background pre-packaged files are found in directories of the same name. To use your own images, replace the files in those folders and edit the HTML accordingly to point to them in the form (index.php).
+PHP Web application for generating thumbnail images for ArcGIS Online, based loosely off of <https://github.com/Esri/thumbnail-builder-js> (but really could be used for any thumbnail creation). This application uses PHP to create an image on the fly for ArcGIS Online thumbnails. By default, the foreground and background pre-packaged files are found in directories of the same name. To use your own images, replace the files in those folders and edit the HTML accordingly to point to them in the form (index.php).
 
 Users can also upload background images. I did not allow for upload of foreground images to control general branding. 
 
